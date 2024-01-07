@@ -1,4 +1,4 @@
-# H1 - Markdown Quick Ref
+# H1 - Markdown Quick Reference
 
 ## H2 - headings should have blank lines before and after
 
