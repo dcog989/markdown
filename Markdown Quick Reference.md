@@ -1,54 +1,218 @@
-# H1 - Markdown Quick Reference
+# Markdown Quick Reference
 
-## H2 - headings should have blank lines before and after
+A quick guide to the most common Markdown syntax.
 
-### H3 - headings should have blank lines before and after
+## Headings
 
-#### H4 - headings should have blank lines before and after
+To create a heading, add hash marks (`#`) in front of a word or phrase. The number of hash marks you use will determine the size of the heading.
 
-##### H5 - headings should have blank lines before and after
+```markdown
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+*Best practice: Separate headings from other text with a blank line.*
 
-*Italics*, **bold**, and ***super important***! _Or_ __use__ ___underscores___. *Mixed for __emphasis__*. Be consistent - first use defines.
+---
 
-How quickly the daft jumping zebras vexed, the brown fox excluded. 1 2 3 4 5 6 7 8 9 0 . , ? ! ; : ' " - + * / = < > % @ # $ ^ & ( ) _ ~ \` { } [ ] | \ /
+## Text Formatting
 
-You can ==highlight words==, ~~strikethrough~~, and line break with 2 spaces at end.  
-Use emoji :joy:? Or subscript H~2~O and superscript X^2^?
+| Style | Syntax | Example |
+|---|---|---|
+| Bold | `**Bold Text**` or `__Bold Text__` | **Bold Text** |
+| Italic | `*Italic Text*` or `_Italic Text_` | *Italic Text* |
+| Bold & Italic | `***Bold & Italic***` or `___Bold & Italic___`| ***Bold & Italic*** |
+| Strikethrough | `~~Strikethrough~~` | ~~Strikethrough~~ |
+| Highlight | `==Highlight==` | ==Highlight== |
+| Subscript | `H~2~O` | H~2~O |
+| Superscript | `X^2^` | X^2^ |
 
-A URL - www.bbc.co.uk
+*Note: Highlight, subscript, and superscript are extended syntax and may not be supported by all Markdown applications.*
 
-A URL in linked text [The BBC](http://www.bbc.co.uk).
+**Line Breaks:** To create a hard line break, end a line with two or more spaces, then press enter.
 
-A sentence with a footnote.[^1]
-[^1]: This is the footnote - but it can be placed anywhere.
+---
 
-----
+## Blockquotes & Horizontal Rules
 
-> blockquote
+**Blockquotes** are used to indicate quoted text. Use the `>` character before a line.
 
-## Lists and Code
-
-1. Ordered list
-2. Second item
-3. Third item
-
-- Unordered list
-- Second item
-- Third item
-
-`print('Code goes here!')`
-
-```python
-{
-num1 = 1.234
-num2 = 3.142
-}
+```markdown
+> This is a blockquote.
+>
+> > This is a nested blockquote.
 ```
 
-## Links
+> This is a blockquote.
+>
+> > This is a nested blockquote.
 
-An image - ![A goat](https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg)
+**Horizontal Rules** create a thematic break. Use three or more asterisks, dashes, or underscores on a line by themselves.
 
-[Go to Lists section](#lists).
+```markdown
+***
+---
+___
+```
 
-Learn more with [Markdown Guide](https://www.markdownguide.org/basic-syntax/) and [Markdown Online Editor](https://stackedit.io/app#).
+---
+
+## Lists
+
+### Unordered Lists
+
+Use an asterisk (`*`), plus (`+`), or minus (`-`) for each list item.
+
+```markdown
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+```
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+
+### Ordered Lists
+
+Use numbers followed by a period. The actual numbers don't matter; Markdown will render them sequentially.
+
+```markdown
+1. First item
+1. Second item
+1. Third item
+    1. Indented item
+```
+1. First item
+2. Second item
+3. Third item
+    1. Indented item
+
+### Task Lists
+
+Task lists allow you to create a list of items with checkboxes. This is common in GitHub Flavored Markdown (GFM).
+
+```markdown
+- [x] Complete task
+- [ ] Incomplete task
+```
+- [x] Complete task
+- [ ] Incomplete task
+
+---
+
+## Links & Images
+
+### Links
+
+Create a link by wrapping the link text in brackets `[]` and the URL in parentheses `()`.
+
+```markdown
+[Markdown Guide](https://www.markdownguide.org)
+
+A raw URL will often be auto-linked: https://www.markdownguide.org
+```
+
+[Markdown Guide](https://www.markdownguide.org)
+
+**Internal Links (Anchors):** To link to a heading within the same document, use the auto-generated ID from that heading.
+
+```markdown
+[Go to the Tables section](#tables).
+```
+[Go to the Tables section](#tables).
+
+### Images
+
+Image syntax is similar to links but prefixed with an exclamation mark `!`.
+
+```markdown
+![A goat](https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg "A goat looking at the camera")
+```
+![A goat](https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg "A goat looking at the camera")
+
+To make an image a link, wrap the image syntax in link syntax.
+```markdown
+[![A goat](https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg)](https://en.wikipedia.org/wiki/Goat)
+```
+
+---
+
+## Code
+
+### Inline Code
+Wrap code with backticks `` ` `` to display it inline.
+
+```markdown
+Use the `print()` function to display output.
+```
+Use the `print()` function to display output.
+
+### Fenced Code Blocks
+Use triple backticks ` ``` ` or triple tildes `~~~` to create a code block. You can specify the language for syntax highlighting.
+
+````markdown
+```python
+def hello_world():
+  print("Hello, world!")
+```
+````
+```python
+def hello_world():
+  print("Hello, world!")
+```
+
+---
+
+## Tables
+
+Create tables with pipes `|` and hyphens `-`. Use colons `:` on the header separator line to define column alignment.
+
+```markdown
+| Left Align  | Center Align | Right Align |
+|:------------|:------------:|------------:|
+| Cell 1      | Cell 2       | Cell 3      |
+| Cell 4      | Cell 5       | Cell 6      |
+```
+
+| Left Align  | Center Align | Right Align |
+|:------------|:------------:|------------:|
+| Cell 1      | Cell 2       | Cell 3      |
+| Cell 4      | Cell 5       | Cell 6      |
+
+---
+
+## Miscellaneous
+
+### Escaping Characters
+To display a literal character that has special meaning in Markdown, use a backslash `\` before it.
+
+```markdown
+\*Without the backslash, this would be a bullet point.\*
+```
+\*Without the backslash, this would be a bullet point.\*
+
+### Footnotes
+Add a footnote to your text.[^1] The definition can appear anywhere in the document.[^2]
+
+[^1]: This is the first footnote.
+[^2]: This is the second footnote.
+
+```markdown
+A sentence with a footnote.[^1]
+[^1]: This is the footnote's content.
+```
+
+### Emoji
+Some Markdown processors support emoji shortcodes.
+
+```markdown
+That's hilarious! :joy:
+```
+That's hilarious! :joy:
